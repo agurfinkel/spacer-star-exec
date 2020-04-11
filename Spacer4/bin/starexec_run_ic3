@@ -3,6 +3,6 @@
 input="$1"
 output="$2/$(basename $1 smt2)out"
 
-./z3 -st -v:0 fixedpoint.xform.slice=false fixedpoint.xform.inline_linear=false fixedpoint.xform.inline_eager=false fixedpoint.xform.tail_simplifier_pve=false fixedpoint.engine=spacer fixedpoint.print_statistics=true fixedpoint.use_heavy_mev=true fixedpoint.pdr.flexible_trace=true fixedpoint.spacer.elim_aux=false fixedpoint.spacer.reach_dnf=false "$input" > "$output" 2>&1 
+./z3 -st -v:0 fp.xform.slice=false fp.xform.inline_linear=false fp.xform.inline_eager=false fp.xform.tail_simplifier_pve=false fp.engine=spacer fp.print_statistics=true  fp.spacer.push_pob=true fp.spacer.elim_aux=false fp.spacer.reach_dnf=false "$input" > "$output" 2>&1 
 
 
