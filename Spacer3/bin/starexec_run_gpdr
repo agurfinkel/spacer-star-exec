@@ -1,0 +1,7 @@
+#!/bin/bash
+
+input="$1"
+output="$2/$(basename $1 smt2)out"
+
+./z3 -st -v:0 fixedpoint.xform.slice=false fixedpoint.xform.inline_linear=false fixedpoint.xform.inline_eager=false fixedpoint.xform.tail_simplifier_pve=false fixedpoint.engine=spacer fixedpoint.print_statistics=true fixedpoint.use_heavy_mev=true fixedpoint.spacer.elim_aux=false fixedpoint.spacer.reach_dnf=false "$input" > "$output" 2>&1
+
